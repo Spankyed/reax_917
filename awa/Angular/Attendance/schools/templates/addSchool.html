@@ -1,0 +1,509 @@
+<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <!-- <div class="m-subheader ">
+             <div class="d-flex align-items-center">
+                 <div class="mr-auto">
+                     <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                         <li class="m-nav__item m-nav__item--dash">
+                             <a href="#" class="m-nav__link m-nav__link--icon">
+                                 <i class="m-nav__link-icon la la-dash"></i>
+                             </a>
+                         </li>
+                         <li class="m-nav__separator">
+                             -
+                         </li>
+                         <li class="m-nav__item">
+                             <a href="" class="m-nav__link">
+                                 <span class="m-nav__link-text nav-title-page">
+                                     My School
+                                 </span>
+                             </a>
+                         </li>
+                         <li class="m-nav__separator">
+                             -
+                         </li>
+                         <li class="m-nav__item">
+                             <a href="" class="m-nav__link">
+                                 <span class="m-nav__link-text nav-title-page">
+                                     Add School
+                                 </span>
+                             </a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>-->
+         <div class="m-content m-box">
+             <div class="row">
+                 <div class="col-xl-12">
+                     <!--Begin::Main Portlet-->
+                    <div class="m-portlet">
+                        <!--begin: Portlet Head-->
+                        <div class="m-portlet__head">
+                            <div class="m-portlet__head-caption">
+                                <div class="m-portlet__head-title">
+                                    <h3 class="m-portlet__head-text">
+                                        <span class="font-bold">My School: </span> Add School
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="m-portlet__head-tools">
+                                <ul class="m-portlet__nav">
+                                    <li class="m-portlet__nav-item">
+                                        <a href="#"
+                                           class="m-portlet__nav-link btn m-btn icon-hover-menu-box m-btn--icon m-btn--icon-only m-btn--pill"
+                                           data-toggle="m-tooltip" data-placement="top"
+                                           title="Help!"
+                                           data-original-title="Help!"><i
+                                                class="la la-question icon-menu-box"></i></a>
+                                    </li>
+                                    <li class="m-portlet__nav-item">
+                                        <a href="javascript:void(0)"
+                                           class="m-portlet__nav-link btn m-btn icon-hover-menu-box m-btn--icon m-btn--icon-only m-btn--pill"
+                                           data-toggle="m-tooltip" data-placement="top"
+                                           title="Back"
+                                           data-original-title="Back" data-ng-controller="allSchoolController"
+                                           ng-click="allSchoolView()">
+                                            <i class="la la-arrow-left icon-menu-box"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end: Portlet Head-->
+                        <!--begin: Form Wizard-->
+                        <div class="m-wizard m-wizard--1 m-wizard--success" id="m_wizard">
+                            <!--begin: Message container -->
+                            <div class="m-portlet__padding-x">
+                                <!-- Here you can put a message or alert -->
+                            </div>
+                            <!--end: Message container -->
+                            <!--begin: Form Wizard Head -->
+                            <div class="m-wizard__head m-portlet__padding-x">
+                                <!--begin: Form Wizard Nav -->
+                                <div class="m-wizard__nav">
+                                    <div class="m-wizard__steps">
+                                        <div class="m-wizard__step m-wizard__step--current"
+                                             data-wizard-target="#m_wizard_form_step_1" ng-show="(current == 0)">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascript:void (0)" class="m-wizard__step-number">
+                                            <span>
+                                                <span>
+                                                    1
+                                                </span>
+                                            </span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    School Details
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_2"
+                                             ng-show="(current == 1)">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascript:void(0)" class="m-wizard__step-number">
+                                            <span>
+                                                <span>
+                                                    2
+                                                </span>
+                                            </span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Select Your Grades
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_3"
+                                             ng-show="(current == 2)">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascript:void(0)" class="m-wizard__step-number">
+                                            <span>
+                                                <span>
+                                                    3
+                                                </span>
+                                            </span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Select Your Periods <br>
+                                                    <small> Aqui se agrega los periodos. Ejemplo: bloque 1, bloque azul,
+                                                        bloque matutino y las areas por ejemplo: gym, soccer, etc.
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_4"
+                                             ng-show="(current == 3)">
+                                            <div class="m-wizard__step-info">
+                                                <a href="javascript:void (0)" class="m-wizard__step-number">
+                                            <span>
+                                                <span>
+                                                    4
+                                                </span>
+                                            </span>
+                                                </a>
+                                                <div class="m-wizard__step-line">
+                                                    <span></span>
+                                                </div>
+                                                <div class="m-wizard__step-label">
+                                                    Select Your Areas And Save Form <br>
+                                                    <small> Aqui se agrega las areas. Ejemplo: Gym, Soccer, pool, etc.
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end: Form Wizard Nav -->
+                            </div>
+                            <!--end: Form Wizard Head -->
+                            <!--begin: Form Wizard Form-->
+                            <div class="m-wizard__form">
+                                <!--1) Use m-form--label-align-left class to alight the form input lables to the right
+                                2) Use m-form--state class to highlight input control borders on form validation-->
+                                <form class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+                                    <!--begin: Form Body -->
+                                    <div class="m-portlet__body">
+                                        <!--begin: Form Wizard Step 1-->
+                                        <div class="m-wizard__form-step m-wizard__form-step--current"
+                                             id="m_wizard_form_step_1" ng-show="(current == 0)">
+                                            <div class="row">
+                                                <div class="col-xl-8 offset-xl-2">
+                                                    <div class="m-form__section m-form__section--first">
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-3 col-form-label">
+                                                                County Name
+                                                            </label>
+                                                            <div class="col-7">
+                                                                <input class="form-control m-input" type="text"
+                                                                       value="Andres Bello">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-3 col-form-label">
+                                                                School Name
+                                                            </label>
+                                                            <div class="col-7">
+                                                                <input class="form-control m-input" type="text"
+                                                                       value="Andres Bello">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-3 col-form-label">
+                                                                School Type
+                                                            </label>
+                                                            <div class="col-7">
+                                                                <select class="form-control m-input m-input--square">
+                                                                    <option>
+                                                                        Please Select
+                                                                    </option>
+                                                                    <option>
+                                                                        Private
+                                                                    </option>
+                                                                    <option>
+                                                                        Charter
+                                                                    </option>
+                                                                    <option>
+                                                                        Public
+                                                                    </option>
+                                                                    <option>
+                                                                        Others
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-3 col-form-label">
+                                                                Education Level
+                                                            </label>
+                                                            <div class="col-7">
+                                                                <select class="form-control m-input m-input--square"
+                                                                        id="exampleSelect133">
+                                                                    <option>
+                                                                        Please Select
+                                                                    </option>
+                                                                    <option>
+                                                                        Elementary
+                                                                    </option>
+                                                                    <option>
+                                                                        Middle School
+                                                                    </option>
+                                                                    <option>
+                                                                        High School
+                                                                    </option>
+                                                                    <option>
+                                                                        Others
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="m-portlet__foot m-portlet__foot--fit m--margin-top-40">
+                                                        <div class="m-form__actions m-form__actions">
+                                                            <div class="row">
+                                                                <div class="col-lg-12 m--align-center">
+                                                                    <a href="javascript:void(0)"
+                                                                       class="btn btn-focus m-btn m-btn--custom m-btn--icon"
+                                                                       data-wizard-action="next" ng-click="current=1"
+                                                                       ng-model="wizard.step">
+                                                                <span>
+                                                                    <span>
+                                                                        Save & Continue
+                                                                    </span>
+                                                                    &nbsp;&nbsp;
+                                                                    <i class="la la-arrow-right"></i>
+                                                                </span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end: Form Wizard Step 1-->
+                                        <!--begin: Form Wizard Step 2-->
+                                        <div class="m-wizard__form-step  m-wizard__form-step--current"
+                                             id="m_wizard_form_step_2" ng-show="(current == 1)">
+                                            <div class="row">
+                                                <div class="col-xl-8 offset-xl-2">
+                                                    <div class="m-form__section m-form__section--first">
+                                                        <div class="form-group m-form__group row">
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    Pre-Kindergarten
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    Kindergarten
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    1st grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    2nd grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    3rd grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    4th grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    5th grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    7th grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    8th grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    9th grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    10th grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    11th grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="m-checkbox-list col-3">
+                                                                <label class="m-checkbox m-checkbox--state-success">
+                                                                    <input type="checkbox">
+                                                                    12th grade
+                                                                    <span></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="m-portlet__foot m-portlet__foot--fit m--margin-top-40">
+                                                        <div class="m-form__actions m-form__actions">
+                                                            <div class="row">
+                                                                <div class="col-lg-6 m--align-center">
+                                                                    <a href="javascript:void(0)"
+                                                                       class="btn btn-focus m-btn m-btn--custom m-btn--icon"
+                                                                       data-wizard-action="next" ng-click="current=0">
+                                                                <span>
+                                                                     &nbsp;&nbsp;
+                                                                    <i class="la la-arrow-left"></i>
+                                                                    <span>
+                                                                        Back
+                                                                    </span>
+                                                                </span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col-lg-6 m--align-center">
+                                                                    <a href="javascript:void(0)"
+                                                                       class="btn btn-focus m-btn m-btn--custom m-btn--icon"
+                                                                       data-wizard-action="next" ng-click="current=2">
+                                                                <span>
+                                                                    <span>
+                                                                        Save & Continue
+                                                                    </span>
+                                                                    &nbsp;&nbsp;
+                                                                    <i class="la la-arrow-right"></i>
+                                                                </span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end: Form Wizard Step 2-->
+                                        <!--begin: Form Wizard Step 3-->
+                                        <div class="m-wizard__form-step  m-wizard__form-step--current"
+                                             id="m_wizard_form_step_3" ng-show="(current == 2)">
+                                            <div class="row">
+                                                <div class="col-xl-8 offset-xl-2">
+                                                    <div class="form-group m-form__group row" name="PeriodsFrm"
+                                                         ng-submit="addPeriods()">
+                                                        <label class="col-4 col-form-label">
+                                                            Customize Periods
+                                                        </label>
+                                                        <div class="col-4">
+                                                            <input class="form-control m-input" type="text"
+                                                                   value="" name="newPeriods" ng-model="newPeriods">
+                                                        </div>
+                                                        <button class="btn btn-focus m-btn m-btn--custom m-btn--icon"
+                                                                ng-disabled="periodsFrm.$invalid"
+                                                                ng-click="addPeriods()">Add
+                                                        </button>
+                                                    </div>
+                                                    <ul style="margin-top: 20px">
+                                                        <li ng-repeat="periods in periods"
+                                                            class="{'fadeOut' : periods.done} box-add-li">
+                                                            <span class="fa fa-close"
+                                                                  ng-click="deletePeriods($index)"></span>
+                                                            <span>{{periods.title}}</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="form-group m-form__group row pt-4" name="PeriodsFrm"
+                                                         ng-submit="addPeriods()">
+                                                        <label class="col-4 col-form-label">
+                                                            Customize Areas
+                                                        </label>
+                                                        <div class="col-4">
+                                                            <input class="form-control m-input" type="text"
+                                                                   value="" name="newSkill" ng-model="newSkill">
+                                                        </div>
+                                                        <button class="btn btn-focus m-btn m-btn--custom m-btn--icon"
+                                                                ng-disabled="skillsFrm.$invalid" ng-click="addSkill()">
+                                                            Add
+                                                        </button>
+                                                    </div>
+                                                    <ul style="margin-top: 20px">
+                                                        <li ng-repeat="skill in skills"
+                                                            class="{'fadeOut' : skill.done} box-add-li">
+                                                            <span class="fa fa-close"
+                                                                  ng-click="deleteSkill($index)"></span>
+                                                            <span>{{skill.title}}</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="m-portlet__foot m-portlet__foot--fit m--margin-top-40">
+                                                        <div class="m-form__actions m-form__actions">
+                                                            <div class="row">
+                                                                <div class="col-lg-6 m--align-center">
+                                                                    <a href="javascript:void(0)"
+                                                                       class="btn btn-focus m-btn m-btn--custom m-btn--icon"
+                                                                       data-wizard-action="next" ng-click="current=1">
+                                                                <span>
+                                                                     &nbsp;&nbsp;
+                                                                    <i class="la la-arrow-left"></i>
+                                                                    <span>
+                                                                        Back
+                                                                    </span>
+                                                                </span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col-lg-6 m--align-center">
+                                                                    <a href="javascript:void(0)"
+                                                                       class="btn btn-focus m-btn m-btn--custom m-btn--icon"
+                                                                       data-wizard-action="next">
+                                                                <span>
+                                                                    <span>
+                                                                        Save Changes
+                                                                    </span>
+                                                                </span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end: Form Wizard Step 3-->
+                                    </div>
+                                    <!--end: Form Body -->
+                                    <!--begin: Form Actions -->
+
+                                    <!--end: Form Actions -->
+                                </form>
+                            </div>
+                            <!--end: Form Wizard Form-->
+                        </div>
+                        <!--end: Form Wizard-->
+                    </div>
+                    <!--End::Main Portlet-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,511 @@
+<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+
+    <div class="m-grid__item m-grid__item--fluid m-wrapper"></div>
+    <div class="m-content m-box">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="m-portlet m-portlet--full-height  ">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                <h3 class="m-portlet__head-text">
+                                    <span class="font-bold">Administration</span>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="m-portlet__head-tools">
+                            <ul class="m-portlet__nav">
+                                <li class="m-portlet__nav-item">
+                                    <a href="#"
+                                       class="m-portlet__nav-link btn m-btn icon-hover-menu-box m-btn--icon m-btn--icon-only m-btn--pill"
+                                       data-toggle="m-tooltip" data-placement="top"
+                                       title="Help!"
+                                       data-original-title="Help!">
+                                       <i class="la la-question icon-menu-box"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="m-portlet__body">
+                        <ul class="m-nav m-portlet-fit--sides">
+                            <li class="m-nav__item">
+                                <div class="m-nav__link">
+                                    <div class="m-portlet__head-caption">
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="m-portlet--full-height m-portlet--tabs">
+                                <div class="m-portlet-no-padding">
+                                    <div class="m-portlet__head-tools" style="padding: 1px !important;">
+                                        <div class="m-portlet__head-tools">
+                                            <div class="tab-pane active">
+                                                <div class="m-portlet__body">
+                                                    <div class="form-group m-form__group row col-md-12 text-center pt-container">
+                                                        <div class="col-12 text-center">
+                                                            <h3 class=" desc-info">
+                                                                Maintanence
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Admin Page Begin-->
+
+                                                    <div data-ng-if="!loading" class="smooth-enter">
+
+                                                        <div class="row">
+                                                                
+                                                            <!-- SUBJECTS -->
+                                                            <div  class="col-lg-4">
+                                                                <div class="card text-left">
+                                                                    <div class="card-header">
+                                                                        <h3 class="d-inline">Subjects</h3>
+                                                                        <button type="button" class="btn btn-danger float-right d-inline" ng-click="removeSubject()"><span
+                                                                            class="la la-trash"></span></button>
+                                                                        <button type="button" class="btn btn-success float-right d-inline" ng-click="editing('Subjects')"><span
+                                                                            class="la la-edit"></span></button>
+                                                                        <button type="button" class="btn btn-accent m-btn m-btn--air float-right d-inline" ng-click="addSubject()"><span
+                                                                            class="la la-plus"></span></button>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <div class="form-group m-form__group">
+                                                                            <div class="m-input-icon m-input-icon--left">
+                                                                                <input type="text" class="form-control m-input" ng-model="query" ng-change="onFilterChange(query)" placeholder="Search..." />
+                                                                                <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                                                    <span>
+                                                                                        <i class="la la-search"></i>
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- if we are not editing -->
+                                                                        <div ng-if="cancer.editType != 'Subjects'">
+                                                                            <div ivh-treeview="list" ivh-treeview-filter="query" ivh-treeview-options="options" style="margin: 10px 10px 15px -20px;">
+                                                                                <script type="text/ng-template">
+                                                                                    <div ng-click="trvw.pick(node, !node.mSelected, $event)" class="node-embed" ng-class="{nodeActive:node.mSelected}" style="cursor: pointer;">
+                                                                                        <span ivh-treeview-toggle>
+                                                                                            <span ivh-treeview-twistie></span>
+                                                                                        </span>
+                                                                                        <span ng-if="trvw.useCheckboxes()" ivh-treeview-checkbox></span>
+                                                                                        <!-- <span class="ivh-treeview-node-label">
+                                                                                                <i ng-class="{'fa fa-book': node.items.length, 'fa fa-address-book': !node.items.length}"></i>
+                                                                                            {{:: trvw.label(node)}}
+                                                                                        </span> -->
+                                                                                        
+                                                                                        <span class="ivh-treeview-node-label" ng-if="!node.editme">
+                                                                                            <i ng-class="{'fa fa-book': node.items.length, 'fa fa-address-book': !node.items.length}"></i>
+                                                                                            {{node.label}}                                        
+                                                                                        </span>
+                                                
+                                                                                        <!-- Edit node after adding  -->
+                                                                                        <span class="ivh-treeview-node-label" ng-if="node.editme">
+                                                                                            <form name="subjEdit" ng-submit="trvw.edit(node, $event)" style="display:inline; margin: 0; padding: 0;" >
+                                                                                                <input type="text" ng-model="node.label" focus-me="true" require/>
+                                                                                            </form>
+                                                                                        </span>
+                                                
+                                                
+                                                                                        <hr id="under"> 
+                                                                                    </div>
+                                                                                    <div ivh-treeview-children></div>
+                                                                                </script>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- if we are editing -->    
+                                                                        <div ng-if="cancer.editType == 'Subjects'">
+                                                                            <div ivh-treeview="list" ivh-treeview-options="options" class="tree" style="margin: 10px 10px 15px -20px;">
+                                                                                <script type="text/ng-template">
+                                                                                    <form name="subjEdit"  ng-submit="trvw.edit()" >
+                                                                                        <div class="node-embed" ng-class="{nodeActivex:node.mSelected}" >
+                                                                                            <span ivh-treeview-toggle>
+                                                                                                <span ivh-treeview-twistie></span>
+                                                                                            </span>
+                                                                                            <span ng-if="trvw.useCheckboxes()" ivh-treeview-checkbox></span>
+                                                                                            <!--If not selected, show just label-->
+                                                                                            <span class="ivh-treeview-node-label" ng-if="!node.mSelected">
+                                                                                                <i ng-class="{'fa fa-book': node.items.length, 'fa fa-address-book': !node.items.length}"></i>  
+                                                                                                {{node.label}}                                   
+                                                                                            </span>
+                                                                                            
+                                                                                            <!--If selected, show form input-->
+                                                                                            <span class="ivh-treeview-node-label" ng-if="node.mSelected">
+                                                                                                <!-- wierd gymnastics between node.title and node.label -->
+                                                                                                
+                                                                                                <input type="text" ng-model="node.label" focus-me="true" require/>
+                                                                                            </span>
+                                                                                            <hr id="under"> 
+                                                                                        </div>
+                                                                                    </form>
+                                                                                    <div ivh-treeview-children></div>
+                                                                                </script>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Subjects tree & search -->
+                                                
+                                                                </div>
+                                                            </div>
+                                                        
+                                                            <!-- AREAS -->
+                                                            <div class="col-lg-4">
+                                                                <div class="card text-left" style="width: 25rem;">
+                                                                    <div class="card-header">
+                                                                        <h3 class="d-inline">Areas</h3>
+                                                                        <button type="button" class="btn btn-danger float-right d-inline" ng-click="remove('Areas')"><span
+                                                                            class="la la-trash"></span>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-success float-right d-inline" ng-click="editing('Areas')"><span
+                                                                            class="la la-edit"></span>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-accent m-btn m-btn--air float-right" ng-click="adding('Areas')"><span
+                                                                            class="la la-plus"></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <div class="form-check" ng-if="editType != 'Areas'" ng-repeat="area in Areas">
+                                                                            <div ng-click="itemSelect('Areas', area)" ng-class="{nodeActive:area.isSelected}"  style="padding-left: 4px">
+                                                                                <input class="form-check-input" type="checkbox" ng-checked="area.checked" value="" >
+                                                                                <label class="form-check-label" for="Check">
+                                                                                {{area.value}}
+                                                                                </label>
+                                                                            </div>
+                                                                            <hr id="under"> 
+                                                                        </div> 
+                                                                        <!-- Areas Edit Form -->
+                                                                        <div class="form-check" ng-if="editType == 'Areas'" ng-repeat="area in Areas">
+                                                                            <form ng-submit="edit('area')"  name="editAreaForm" >
+                                                                                <div ng-if="!area.isSelected" ng-class="{nodeActive:area.isSelected}">
+                                                                                    <input class="form-check-input" type="checkbox" ng-checked="area.checked" value="" >
+                                                                                    <label class="form-check-label" for="Check">
+                                                                                    {{area.value}}
+                                                                                    </label>
+                                                                                </div>
+                                                
+                                                                                <div ng-if="area.isSelected">
+                                                                                    <input class="form-check-input" type="checkbox" value="" ng-checked="area.checked">
+                                                                                    <input type="text" name="editArea" ng-model="area.value" focus-me="true" required />
+                                                                                </div>
+                                                                                <hr id="under"> 
+                                                                            </form>  
+                                                                        </div>
+                                                
+                                                                        <!-- New Area Form (show template 'New Area' until user submits edit form, then sets model value) -->
+                                                                        <div ng-if="addType == 'Areas'">
+                                                                            <form ng-submit="add('area')"  name="addAreaForm" >
+                                                                                <input class="form-check-input" type="checkbox" value="" ng-checked="Area.checked">
+                                                                                <input type="text" name="addArea" ng-model="Area.value" focus-me="true" required />
+                                                                            </form>  
+                                                                        </div>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>  
+                                                        </div>
+                                                        
+                                                        <div class="row">
+                                                            <!-- PERIODS -->
+                                                            <div class="col-lg-4">
+                                                                <div class="card text-left" style="width: 25rem;">
+                                                                    <div class="card-header">
+                                                                        <h3 class="d-inline">Periods</h3>
+                                                                        <button type="button" class="btn btn-danger float-right d-inline" ng-click="remove('Periods')"><span
+                                                                            class="la la-trash"></span>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-success float-right d-inline" ng-click="editing('Periods')"><span
+                                                                            class="la la-edit"></span>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-accent m-btn m-btn--air float-right" ng-click="adding('Periods')"><span
+                                                                            class="la la-plus"></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <div class="form-check" ng-if="editType != 'Periods'" ng-repeat="period in Periods">
+                                                                            <div ng-click="itemSelect('Periods',period)" ng-class="{nodeActive:period.isSelected}"  style="padding-left: 4px">
+                                                                                <input class="form-check-input" type="checkbox" value="" ng-checked="period.checked" >
+                                                                                <label class="form-check-label" for="Check">
+                                                                                {{period.value}}
+                                                                                </label>
+                                                                            </div>
+                                                                            <hr id="under"> 
+                                                                        </div>    
+                                                                        <!-- Periods Edit Form -->
+                                                                        <div class="form-check" ng-if="editType == 'Periods'" ng-repeat="period in Periods">
+                                                                            <form ng-submit="edit('Period', Period)"  name="editPeriodForm" >    
+                                                                                <div ng-if="!period.isSelected"  ng-class="{nodeActive:period.isSelected}">
+                                                                                    <input class="form-check-input" type="checkbox" value="" ng-checked="period.checked" >
+                                                                                    <label class="form-check-label" for="Check">
+                                                                                    {{period.value}}
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div ng-if="period.isSelected">
+                                                                                    <input class="form-check-input" type="checkbox" value="" ng-checked="period.checked">
+                                                                                    <input type="text" name="editPeriod" ng-model="period.value" focus-me="true" required />
+                                                                                </div>
+                                                                                <hr id="under"> 
+                                                                            </form> 
+                                                                        </div>
+                                                                        <!-- New Period Form-->
+                                                                        <div ng-if="addType == 'Periods'">
+                                                                            <form ng-submit="add('period')" name="addPeriodForm" >
+                                                                                <input class="form-check-input" type="checkbox" value="" id="Check" ng-checked="Period.checked"/>
+                                                                                <input type="text" name="newPeriod" ng-model="Period.value" value="Period.Value" focus-me="true" required />
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>  
+                                                            </div>
+                                                        
+                                                        
+                                                            <!-- GRADES -->
+                                                            <div class="col-lg-4">
+                                                                <div class="card text-left" style="width: 25rem;">
+                                                                    <div class="card-header">
+                                                                        <h3 class="d-inline">Grades</h3>
+                                                                        <button type="button" class="btn btn-danger float-right d-inline" ng-click="remove('Grades')"><span
+                                                                            class="la la-trash"></span>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-success float-right d-inline" ng-click="editing('Grades')"><span
+                                                                            class="la la-edit"></span>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-accent m-btn m-btn--air float-right" ng-click="adding('Grades')"><span
+                                                                            class="la la-plus"></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <div class="form-check" ng-if="editType != 'Grades'" ng-repeat="grade in Grades">
+                                                                            <div ng-click="itemSelect('Grades',grade)" ng-class="{nodeActive:grade.isSelected}"  style="padding-left: 4px">
+                                                                                <input class="form-check-input" type="checkbox" value="" ng-checked="grade.checked" >
+                                                                                <label class="form-check-label" for="Check">
+                                                                                {{grade.value}}
+                                                                                </label>
+                                                                            </div>
+                                                                            <hr id="under"> 
+                                                                        </div>    
+                                                                        <!-- Grades Edit Form -->
+                                                                        <div class="form-check" ng-if="editType == 'Grades'" ng-repeat="grade in Grades">
+                                                                            <form ng-submit="edit('grade', grade)"  name="editGradeForm" >    
+                                                                                <div ng-if="!grade.isSelected"  ng-class="{nodeActive:grade.isSelected}">
+                                                                                    <input class="form-check-input" type="checkbox" value="" ng-checked="grade.checked" >
+                                                                                    <label class="form-check-label" for="Check">
+                                                                                    {{grade.value}}
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div ng-if="grade.isSelected">
+                                                                                    <input class="form-check-input" type="checkbox" value="" ng-checked="grade.checked">
+                                                                                    <input type="text" name="editGrade" ng-model="grade.value" focus-me="true" required />
+                                                                                </div>
+                                                                                <hr id="under"> 
+                                                                            </form> 
+                                                                        </div>
+                                                                        <!-- New Grade Form-->
+                                                                        <div ng-if="addType == 'Grades'">
+                                                                            <form ng-submit="add('grade')" name="addGradeForm" >
+                                                                                <input class="form-check-input" type="checkbox" value="" id="Check" ng-checked="Grade.checked"/>
+                                                                                <input type="text" name="newGrade" ng-model="Grade.value" value="Grade.Value" focus-me="true" required />
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>  
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                
+                                                <!-- Loading Spinner -->
+                                                <div class="loader" data-ng-if="loading">
+                                                    <i class="fas fa-circle-notch fa-spin fa-5x centered"></i>
+                                                </div>
+                                                <!--  Adming Page End  -->
+
+
+                                                </div>
+                                                <div class="m-portlet__foot m-portlet__foot--fit" style="padding-top:10px;">
+                                                    <div class="m-form__actions">
+                                                        <div class="row">
+                                                            <div class="col-4"></div>
+                                                            <div class="col-12 text-center">
+                                                                <button ng-click="save()"
+                                                                        class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                                                                    Save 
+                                                                </button>
+                                                                &nbsp;&nbsp;
+                                                                <button ng-click="getStore()"
+                                                                        class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+                                                                    Get (LOCAL STORE)
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal fade" id="m_modal_1_2" tabindex="-1" role="dialog"
+                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                Select Student
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">
+                                                                        &times;
+                                                                    </span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="m-scrollable" data-scrollbar-shown="true"
+                                                                 data-scrollable="true"
+                                                                 data-max-height="400">
+                                                                <div class="m-portlet__body">
+                                                                    <!--begin::Section-->
+                                                                    <div class="m-section">
+                                                                        <div class="col-7">
+                                                                            <div class="form-group m-form__group">
+                                                                                <div class="m-input-icon m-input-icon--left">
+                                                                                    <input type="text" class="form-control m-input"
+                                                                                           placeholder="Search Student">
+                                                                                    <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                                            <span>
+                                                                                <i class="la la-search"></i>
+                                                                            </span>
+												                        </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="m-section__content">
+                                                                            <table class="table">
+                                                                                <thead>
+                                                                                <tr>
+                                                                                    <th>
+                                                                                        #
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        First Name
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        Last Name
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        Select
+                                                                                    </th>
+                                                                                </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <th scope="row">
+                                                                                        1
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        Jhon
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        Stone
+                                                                                    </td>
+                                                                                    <td class="text-center">
+                                                                                        <label class="m-checkbox m-checkbox--success">
+                                                                                            <input type="checkbox">
+                                                                                            <span></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th scope="row">
+                                                                                        1
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        Jhon
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        Stone
+                                                                                    </td>
+                                                                                    <td class="text-center">
+                                                                                        <label class="m-checkbox m-checkbox--success">
+                                                                                            <input type="checkbox">
+                                                                                            <span></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th scope="row">
+                                                                                        1
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        Jhon
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        Stone
+                                                                                    </td>
+                                                                                    <td class="text-center">
+                                                                                        <label class="m-checkbox m-checkbox--success">
+                                                                                            <input type="checkbox">
+                                                                                            <span></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th scope="row">
+                                                                                        1
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        Jhon
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        Stone
+                                                                                    </td>
+                                                                                    <td class="text-center">
+                                                                                        <label class="m-checkbox m-checkbox--success">
+                                                                                            <input type="checkbox">
+                                                                                            <span></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th scope="row">
+                                                                                        1
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        Jhon
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        Stone
+                                                                                    </td>
+                                                                                    <td class="text-center">
+                                                                                        <label class="m-checkbox m-checkbox--success">
+                                                                                            <input type="checkbox">
+                                                                                            <span></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Section-->
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">
+                                                                    Close
+                                                                </button>
+                                                                <button type="button" class="btn btn-primary">
+                                                                    Save changes
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
