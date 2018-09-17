@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html data-ng-app="app" data-ng-controller="homeController">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no">
+    <!--begin::Web font -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script>
+        WebFont.load({
+            google: {"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]},
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <title>Attendance</title>
+
+    <!-- Styles for Plugins -->
+
+    <link rel="stylesheet" href="Content/assets/vendors/custom/fullcalendar/fullcalendar.bundle.css">
+    <link rel="stylesheet" href="Content/assets/vendors/base/vendors.bundle.css">
+    <link rel="stylesheet" href="Content/assets/demo/default/base/style.bundle.css">
+
+    <link rel="shortcut icon" href="Content/assets/demo/default/media/img/logo/favicon.ico"/>
+
+
+    <!--    Librerias AngularJS    -->
+    <script src="Content/libs/angular/angular.min.js"></script>
+    <script src="Content/libs/angular/angular-route.min.js"></script>
+    <script src="Content/libs/angular/angular-animate.min.js"></script>
+    <script src="Content/libs/angular/angular-cookies.min.js"></script>
+    <script src="Content/libs/angular/angular-loader.min.js"></script>
+    <script src="Content/libs/angular/angular-messages.min.js"></script>
+    <script src="Content/libs/angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="Content/libs/angular/angular-sanitize.min.js"></script>
+
+    <!--    Librerias JS    -->
+    <script src="Scripts/jquery-3.2.0.min.js"></script>
+    <!--    Scripts JS    -->
+
+
+    <!-- jQuery-scripts for Template -->
+    <script src="Scripts/vendors.bundle.js"></script>
+    <script src="Scripts/scripts.bundle.js"></script>
+    <script src="Scripts/fullcalendar.bundle.js"></script>
+    <script src="Scripts/dashboard.js"></script>
+    <script src="Scripts/input-mask.js"></script>
+
+    <!--<script src="Scripts/filterWithPagination.js"></script>-->
+
+
+    <!--    Modulos AngularJS    -->
+    <script src="AngularApp/js/AngularConfiguration/modules.js"></script>
+    <!--    Configuración AngularJS    -->
+    <script src="AngularApp/js/AngularConfiguration/config.js"></script>
+    <!--    Constantes AngularJS    -->
+    <script src="AngularApp/js/AngularConfiguration/constants.js"></script>
+    <!--    Servicios AngularJS    -->
+    <script src="AngularApp/js/AngularConfiguration/services.js"></script>
+    <!--    Directivas AngularJS    -->
+    <script src="AngularApp/js/AngularConfiguration/directives.js"></script>
+    <!--    Filters AngularJS    -->
+    <script src="AngularApp/js/AngularConfiguration/filters.js"></script>
+    <!--    Controladores AngularJS    -->
+    <script src="AngularApp/js/login/controller/loginController.js"></script>
+    <script src="AngularApp/js/sidebar/controller/sidebarController.js"></script>
+    <script src="AngularApp/js/home/controller/homeController.js"></script>
+    <script src="AngularApp/js/users/controller/userController.js"></script>
+    <script src="AngularApp/js/users/controller/allUserController.js"></script>
+    <script src="AngularApp/js/users/controller/viewUserController.js"></script>
+    <script src="AngularApp/js/users/controller/bulkUserController.js"></script>
+    <script src="AngularApp/js/school/controller/schoolController.js"></script>
+    <script src="AngularApp/js/school/controller/allSchoolController.js"></script>
+    <script src="AngularApp/js/myClass/controller/addClassController.js"></script>
+    <script src="AngularApp/js/myClass/controller/allClassController.js"></script>
+    <script src="AngularApp/js/device/controller/allDeviceController.js"></script>
+    <script src="AngularApp/js/device/controller/addDeviceController.js"></script>
+
+
+
+</head>
+<body class="m-page--fluid m--skin- m-content--skin-light m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+<header class="m-grid__item    m-header " data-minimize-offset="200" data-minimize-mobile-offset="200"
+        data-ng-controller="sidebarController" ng-show="!hideSidebar">
+    <div class="m-container m-container--fluid m-container--full-height">
+        <div class="m-stack m-stack--ver m-stack--desktop">
+            <!-- BEGIN: Brand -->
+            <div class="m-stack__item m-brand  m-brand--skin-dark ">
+                <div class="m-stack m-stack--ver m-stack--general">
+                    <div class="m-stack__item m-stack__item--middle m-brand__logo">
+                        <a href="#" class="m-brand__logo-wrapper">
+                            <img alt="" src="../assets/demo/default/media/img/logo/logo_default_dark.png"/>
+                        </a>
+                    </div>
+                    <div class="m-stack__item m-stack__item--middle m-brand__tools">
+                        <!-- BEGIN: Left Aside Minimize Toggle -->
+                        <a href="javascript:;" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block
+					 ">
+                            <span></span>
+                        </a>
+                        <!-- END -->
+                        <!-- BEGIN: Responsive Aside Left Menu Toggler -->
+                        <a href="javascript:;" id="m_aside_left_offcanvas_toggle"
+                           class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-tablet-and-mobile-inline-block">
+                            <span></span>
+                        </a>
+                        <!-- END -->
+                        <!-- END -->
+                        <!-- BEGIN: Topbar Toggler -->
+                        <a id="m_aside_header_topbar_mobile_toggle" href="javascript:;"
+                           class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
+                            <i class="flaticon-more"></i>
+                        </a>
+                        <!-- BEGIN: Topbar Toggler -->
+                    </div>
+                </div>
+            </div>
+            <!-- END: Brand -->
+            <div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
+                <!-- BEGIN: Horizontal Menu -->
+                <button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-dark "
+                        id="m_aside_header_menu_mobile_close_btn">
+                    <i class="la la-close"></i>
+                </button>
+
+                <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+                    <div class="m-stack__item m-topbar__nav-wrapper">
+                        <ul class="m-topbar__nav m-nav m-nav--inline">
+
+                            <li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light"
+                                data-dropdown-toggle="click" cs-dropdown="dropdownOneIsOpen">
+                                <a href="javascript:void(0)" class="m-nav__link m-dropdown__toggle">
+                                    <span class="m-topbar__welcome business-name">
+                                        Hello, Paola Da Silva
+                                    </span>
+                                    <span class="m-topbar__userpic">
+                                        <img src="Content/img/paola.jpg"
+                                             class="m--img-rounded m--marginless m--img-centered" alt=""/>
+                                    </span>
+                                </a>
+                                <div class="m-dropdown__wrapper">
+                                    <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                                    <div class="m-dropdown__inner">
+                                        <div class="m-dropdown__header m--align-center"
+                                             style="background: url(Content/img/bg-attendace.jpg); background-size: cover;">
+                                            <div class="m-card-user m-card-user--skin-dark">
+                                                <div class="m-card-user__pic">
+                                                    <img src="Content/img/child-face.png"
+                                                         class="m--img-rounded m--marginless" alt=""/>
+                                                </div>
+                                                <div class="m-card-user__details">
+                                                    <span class="m-card-user__name m--font-weight-500">
+                                                        Mark Andre
+                                                    </span>
+                                                    <a href="" class="m-card-user__email m--font-weight-300 m-link">
+                                                        mark.andre@gmail.com
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-dropdown__body">
+                                            <div class="m-dropdown__content">
+                                                <ul class="m-nav m-nav--skin-light">
+                                                    <li class="m-nav__section m--hide">
+																	<span class="m-nav__section-text">
+																		Section
+																	</span>
+                                                    </li>
+                                                    <li class="m-nav__item">
+                                                        <a href="../../header/profile.html" class="m-nav__link">
+                                                            <i class="m-nav__link-icon flaticon-profile-1"></i>
+                                                            <span class="m-nav__link-title">
+																			<span class="m-nav__link-wrap">
+																				<span class="m-nav__link-text">
+																					My Profile
+																				</span>
+																				<span class="m-nav__link-badge">
+																					<span class="m-badge m-badge--success">
+																						2
+																					</span>
+																				</span>
+																			</span>
+																		</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="m-nav__item">
+                                                        <a href="../../header/profile.html" class="m-nav__link">
+                                                            <i class="m-nav__link-icon flaticon-share"></i>
+                                                            <span class="m-nav__link-text">
+																			Activity
+																		</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="m-nav__item">
+                                                        <a href="../../header/profile.html" class="m-nav__link">
+                                                            <i class="m-nav__link-icon flaticon-chat-1"></i>
+                                                            <span class="m-nav__link-text">
+																			Messages
+																		</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                    <li class="m-nav__item">
+                                                        <a href="../../header/profile.html" class="m-nav__link">
+                                                            <i class="m-nav__link-icon flaticon-info"></i>
+                                                            <span class="m-nav__link-text">
+																			FAQ
+																		</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="m-nav__item">
+                                                        <a href="../../header/profile.html" class="m-nav__link">
+                                                            <i class="m-nav__link-icon flaticon-lifebuoy"></i>
+                                                            <span class="m-nav__link-text">
+																			Support
+																		</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                    <li class="m-nav__item">
+                                                        <a href="../../snippets/pages/user/login-1.html"
+                                                           class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+                                                            Logout
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop ">
+    <!-- BEGIN: Left Aside -->
+    <button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
+        <i class="la la-close"></i>
+    </button>
+    <div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-dark "
+         data-ng-controller="sidebarController" ng-show="!hideSidebar">
+        <!-- BEGIN: Aside Menu -->
+        <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark "
+             data-menu-vertical="true" data-menu-scrollable="false" data-menu-dropdown-timeout="500">
+            <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
+                <li class="m-menu__section">
+                    <h4 class="m-menu__section-text">
+                        Components
+                    </h4>
+                    <i class="m-menu__section-icon flaticon-more-v3"></i>
+                </li>
+                <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"
+                    data-menu-submenu-toggle="hover">
+                    <a href="javascript:void(0)" class="m-menu__link m-menu__toggle" data-ng-controller="homeController"
+                       ng-click="homeMenu()">
+                        <i class="m-menu__link-icon fa fa-dashboard"></i>
+                        <span class="m-menu__link-text">Home</span>
+                    </a>
+                </li>
+                <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"
+                    data-menu-submenu-toggle="hover">
+                    <a href="#" class="m-menu__link m-menu__toggle">
+                        <i class="m-menu__link-icon fa fa-users"></i>
+                        <span class="m-menu__link-text">My Users</span>
+                        <i class="m-menu__ver-arrow la la-angle-right"></i>
+                    </a>
+                    <div class="m-menu__submenu ">
+                        <span class="m-menu__arrow"></span>
+                        <ul class="m-menu__subnav">
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="allUserController"
+                                   ng-click="allUser()"
+                                   class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">User List</span>
+                                </a>
+                            </li>
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="userController"
+                                   ng-click="myUser()"
+                                   class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Add User</span>
+                                </a>
+                            </li>
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="bulkUserController"
+                                   ng-click="bulkUserUpload()" class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Bulk User upload</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"
+                    data-menu-submenu-toggle="hover">
+                    <a href="#" class="m-menu__link m-menu__toggle">
+                        <i class="m-menu__link-icon fa fa-university"></i>
+                        <span class="m-menu__link-text">My School</span>
+                        <i class="m-menu__ver-arrow la la-angle-right"></i>
+                    </a>
+                    <div class="m-menu__submenu ">
+                        <span class="m-menu__arrow"></span>
+                        <ul class="m-menu__subnav">
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="allSchoolController"
+                                   ng-click="allSchoolView()"
+                                   class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">School List</span>
+                                </a>
+                            </li>
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="schoolController"
+                                   ng-click="addSchool()"
+                                   class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Add School</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"
+                    data-menu-submenu-toggle="hover">
+                    <a href="#" class="m-menu__link m-menu__toggle">
+                        <i class="m-menu__link-icon fa fa-clipboard"></i>
+                        <span class="m-menu__link-text">My Class</span>
+                        <i class="m-menu__ver-arrow la la-angle-right"></i>
+                    </a>
+                    <div class="m-menu__submenu ">
+                        <span class="m-menu__arrow"></span>
+                        <ul class="m-menu__subnav">
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="addClassController"
+                                   ng-click="viewAddClass()"
+                                   class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Add class</span>
+                                </a>
+                            </li>
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="allClassController"
+                                   ng-click="allClass()"
+                                   class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Class List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"
+                    data-menu-submenu-toggle="hover">
+                    <a href="#" class="m-menu__link m-menu__toggle">
+                        <i class="m-menu__link-icon fa fa-tablet"></i>
+                        <span class="m-menu__link-text">Device</span>
+                        <i class="m-menu__ver-arrow la la-angle-right"></i>
+                    </a>
+                    <div class="m-menu__submenu ">
+                        <span class="m-menu__arrow"></span>
+                        <ul class="m-menu__subnav">
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="addDeviceController"
+                                   ng-click="newDevice()"
+                                   class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Add Device</span>
+                                </a>
+                            </li>
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" data-ng-controller="allDeviceController"
+                                   ng-click="deviceList()"
+                                   class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Device List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"
+                    data-menu-submenu-toggle="hover">
+                    <a href="#" class="m-menu__link m-menu__toggle">
+                        <i class="m-menu__link-icon fa fa-pie-chart"></i>
+                        <span class="m-menu__link-text">Report</span>
+                        <i class="m-menu__ver-arrow la la-angle-right"></i>
+                    </a>
+                    <div class="m-menu__submenu ">
+                        <span class="m-menu__arrow"></span>
+                        <ul class="m-menu__subnav">
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Report Name 1</span>
+                                </a>
+                            </li>
+                            <li class="m-menu__item " aria-haspopup="true">
+                                <a href="javascript: void(0)" class="m-menu__link ">
+                                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="m-menu__link-text">Report Name 2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- END: Aside Menu -->
+    </div>
+    <!-- END: Left Aside -->
+    <div class="">
+        <div class="m-content">
+            <div class="row">
+                <div data-ng-view></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

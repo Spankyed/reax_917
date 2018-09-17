@@ -1,0 +1,671 @@
+<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <div class="m-content m-box">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="m-portlet m-portlet--full-height  ">
+                        <div class="m-portlet__head">
+                            <div class="m-portlet__head-caption">
+                                <div class="m-portlet__head-title">
+                                    <h3 class="m-portlet__head-text">
+                                        <span class="font-bold">My User: </span> All User List
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="m-portlet__head-tools">
+                                <ul class="m-portlet__nav">
+                                    <li class="m-portlet__nav-item">
+                                        <a href="javascript:void(0)"
+                                           class="m-portlet__nav-link btn m-btn icon-hover-menu-box m-btn--icon m-btn--icon-only m-btn--pill"
+                                           data-ng-controller="allUserController" ng-click="allUser()">
+                                            <i class="la la-arrow-left icon-menu-box"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 mTop-30">
+                    <div class="m-portlet m-portlet--full-height  ">
+                        <div class="m-portlet__body">
+                            <div class="m-card-profile">
+                                <div class="m-card-profile__title ">
+                                    My Profile
+                                </div>
+                                <div class="m-card-profile__pic">
+                                    <div class="m-card-profile__pic-wrapper">
+                                        <img src="Content/img/user.png" alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="m-nav m-nav--hover-bg m-portlet-fit--sides hide-mobile">
+                                <li class="m-nav__item">
+                                    <a href="javascript:void(0)" class="m-nav__link">
+                                        <i class="m-nav__link-icon flaticon-plus"></i>
+                                        <span class="m-nav__link-text">
+                                           Add a New Image
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="m-portlet__body-separator"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8 mTop-30">
+                    <div class="m-portlet m-portlet--full-height m-portlet--tabs">
+                        <div class="m-portlet__head m-portlet__head_white">
+                            <div class="m-portlet__head-tools">
+                                <div class="tab-pane active">
+                                    <form class="m-form m-form--fit m-form--label-align-right">
+                                        <div class="m-portlet__body">
+                                            <div class="form-group m-form__group row col-md-12 text-center pt-container">
+                                                <div class="col-12 text-center">
+                                                    <h3 class=" desc-info">
+                                                        Personal Information
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    User Type
+                                                </label>
+                                                <div class="col-7">
+                                                    <select class="form-control m-input m-input--square"
+                                                            id="exampleSelect133">
+                                                        <option>
+                                                            Please Select
+                                                        </option>
+                                                        <option>
+                                                            ReaXium Master
+                                                        </option>
+                                                        <option>
+                                                            County-zone admin
+                                                        </option>
+                                                        <option>
+                                                            School Admin
+                                                        </option>
+                                                        <option>
+                                                            Teacher
+                                                        </option>
+                                                        <option>
+                                                            Student
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    School
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text"
+                                                           value="Andres Bello">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    First Name
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text" value="Mark ">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Middle Name
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text"
+                                                           value="Andre">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Last Name
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text"
+                                                           value="Smith">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Date of Birth
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text"
+                                                           value="30 may 1990">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Number ID
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text"
+                                                           value="990423432">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Departament
+                                                </label>
+                                                <div class="col-7">
+                                                    <select class="form-control m-input m-input--square"
+                                                            id="exampleSelect12">
+                                                        <option>
+                                                            Please Select
+                                                        </option>
+                                                        <option>
+                                                            Pre-Kindergarten
+                                                        </option>
+                                                        <option>
+                                                            Kindergarten
+                                                        </option>
+                                                        <option>
+                                                            1st grade
+                                                        </option>
+                                                        <option>
+                                                            2nd grade
+                                                        </option>
+                                                        <option>
+                                                            3rd grade
+                                                        </option>
+                                                        <option>
+                                                            4th grade
+                                                        </option>
+                                                        <option>
+                                                            5th grade
+                                                        </option>
+                                                        <option>
+                                                            6th grade
+                                                        </option>
+                                                        <option>
+                                                            7th grade
+                                                        </option>
+                                                        <option>
+                                                            8th grade
+                                                        </option>
+                                                        <option>
+                                                            9th grade
+                                                        </option>
+                                                        <option>
+                                                            10th grade
+                                                        </option>
+                                                        <option>
+                                                            11th grade
+                                                        </option>
+                                                        <option>
+                                                            12th grade
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Select Student
+                                                </label>
+
+                                                <div class="col-edit-6">
+                                                    <div class="m-input-icon m-input-icon--left">
+                                                        <input type="text" class="form-control m-input"
+                                                               placeholder="Type Student">
+                                                        <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                            <span>
+                                                                <i class="la la-search"></i>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-edit-3 margin-button-add">
+                                                    <button type="button"
+                                                            class="btn btn-accent m-btn m-btn--air m-btn--custom"
+                                                            data-toggle="modal" data-target="#m_moda_student">
+                                                        Add Student
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- select student table -->
+                                            <div class="col-lg-12 col-md-12 col-sm-12 m-box">
+                                                <div class="m-portlet--full-height m-portlet--tabs">
+                                                    <div class="m-portlet-no-padding">
+                                                        <div class="m-portlet__head-tools"
+                                                             style="padding: 1px !important;">
+                                                            <table class="table text-center bg-table-light margin-row-30">
+                                                                <thead class="bg-thead-dark">
+                                                                <tr>
+                                                                    <th>
+                                                                        Photo
+                                                                    </th>
+                                                                    <th>
+                                                                        First Name
+                                                                    </th>
+                                                                    <th>
+                                                                        Last Name
+                                                                    </th>
+                                                                    <th>
+                                                                        Actions
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img src="Content/img/child-face.png" alt=""
+                                                                             class="img-table-my-user">
+                                                                    </td>
+                                                                    <td>
+                                                                        Gabriel
+                                                                    </td>
+                                                                    <td>
+                                                                        Carrillo
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="#"
+                                                                           class="m-portlet__nav-link btn m-btn btn-my-user-table m-btn--icon m-btn--icon-only m-btn--pill"
+                                                                           data-toggle="m-tooltip" data-placement="top"
+                                                                           title="Delete Information"
+                                                                           data-original-title="Delete Information"><i
+                                                                                class="la la-bitbucket font-icon-table"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end select student table -->
+
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Add Relationship
+                                                </label>
+
+                                                <div class="col-edit-6">
+                                                    <div class="m-input-icon m-input-icon--left">
+                                                        <input type="text" class="form-control m-input"
+                                                               placeholder="Type Student">
+                                                        <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                            <span>
+                                                                <i class="la la-search"></i>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-edit-3 margin-button-add">
+                                                    <button type="button"
+                                                            class="btn btn-accent m-btn m-btn--air m-btn--custom"
+                                                            data-toggle="modal" data-target="#m_modal_relationship">
+                                                        Add Relationship
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- select relationship table -->
+                                            <div class="col-lg-12 col-md-12 col-sm-12 m-box">
+                                                <div class="m-portlet--full-height m-portlet--tabs">
+                                                    <div class="m-portlet-no-padding">
+                                                        <div class="m-portlet__head-tools"
+                                                             style="padding: 1px !important;">
+                                                            <table class="table text-center bg-table-light margin-row-30">
+                                                                <thead class="bg-thead-dark">
+                                                                <tr>
+                                                                    <th>
+                                                                        Photo
+                                                                    </th>
+                                                                    <th>
+                                                                        First Name
+                                                                    </th>
+                                                                    <th>
+                                                                        Last Name
+                                                                    </th>
+                                                                    <th>
+                                                                        Actions
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img src="Content/img/paola.jpg" alt=""
+                                                                             class="img-table-my-user">
+                                                                    </td>
+                                                                    <td>
+                                                                        Gabriel
+                                                                    </td>
+                                                                    <td>
+                                                                        Carrillo
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="#"
+                                                                           class="m-portlet__nav-link btn m-btn btn-my-user-table m-btn--icon m-btn--icon-only m-btn--pill"
+                                                                           data-toggle="m-tooltip" data-placement="top"
+                                                                           title="Delete Information"
+                                                                           data-original-title="Delete Information"><i
+                                                                                class="la la-bitbucket font-icon-table"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end select relationship table -->
+
+                                            <div class="form-group m-form__group row col-md-12 text-center">
+                                                <div class="col-12 text-center pt-container">
+                                                    <h3 class=" desc-info">
+                                                        Phone Number
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Home
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text"
+                                                           value="+502209393209">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Mobile
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text"
+                                                           value="+02 020109392">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    Office
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text" value="+0420205555">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row col-md-12 text-center">
+                                                <div class="col-12 text-center pt-container">
+                                                    <h3 class=" desc-info">
+                                                        User Status & E-mail
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    User Status
+                                                </label>
+                                                <div class="col-7">
+                                                    <select class="form-control m-input m-input--square"
+                                                            id="exampleSelect1">
+                                                        <option>
+                                                            Active
+                                                        </option>
+                                                        <option>
+                                                            Inactive
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-4 col-form-label">
+                                                    E-mail Address
+                                                </label>
+                                                <div class="col-7">
+                                                    <input class="form-control m-input" type="text"
+                                                           value="mark.andre@gmail.com">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-portlet__foot m-portlet__foot--fit">
+                                            <div class="m-form__actions">
+                                                <div class="row">
+                                                    <div class="col-4"></div>
+                                                    <div class="col-12 text-center">
+                                                        <button type="reset"
+                                                                class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                                                            Save changes
+                                                        </button>
+                                                        &nbsp;&nbsp;
+                                                        <button type="reset"
+                                                                class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+                                                            Cancel
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal fade" id="m_moda_student" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    Select Student
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">
+                                                        &times;
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="m-scrollable" data-scrollbar-shown="true"
+                                                     data-scrollable="true"
+                                                     data-max-height="400">
+                                                    <div class="m-portlet__body">
+                                                        <!--begin::Section-->
+                                                        <div class="m-section">
+                                                            <div class="col-7">
+                                                                <div class="form-group m-form__group">
+                                                                    <div class="m-input-icon m-input-icon--left">
+                                                                        <input type="text" class="form-control m-input"
+                                                                               placeholder="Search Student">
+                                                                        <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                                            <span>
+                                                                                <i class="la la-search"></i>
+                                                                            </span>
+												                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-section__content">
+                                                                <table class="table">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            #
+                                                                        </th>
+                                                                        <th>
+                                                                            First Name
+                                                                        </th>
+                                                                        <th>
+                                                                            Last Name
+                                                                        </th>
+                                                                        <th>
+                                                                            Select
+                                                                        </th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            1
+                                                                        </th>
+                                                                        <td>
+                                                                            Jhon
+                                                                        </td>
+                                                                        <td>
+                                                                            Stone
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <label class="m-checkbox m-checkbox--success">
+                                                                                <input type="checkbox">
+                                                                                <span></span>
+                                                                            </label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            1
+                                                                        </th>
+                                                                        <td>
+                                                                            Jhon
+                                                                        </td>
+                                                                        <td>
+                                                                            Stone
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <label class="m-checkbox m-checkbox--success">
+                                                                                <input type="checkbox">
+                                                                                <span></span>
+                                                                            </label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Section-->
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button data-dismiss="modal"
+                                                            class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+                                                        Close
+                                                    </button>
+                                                    <button type="button"
+                                                            class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                                                        Save Changes
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="m_modal_relationship" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="relationshipLabel">
+                                                    Select Relationship
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">
+                                                        &times;
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="m-scrollable" data-scrollbar-shown="true"
+                                                     data-scrollable="true"
+                                                     data-max-height="400">
+                                                    <div class="m-portlet__body">
+                                                        <!--begin::Section-->
+                                                        <div class="m-section">
+                                                            <div class="col-7">
+                                                                <div class="form-group m-form__group">
+                                                                    <div class="m-input-icon m-input-icon--left">
+                                                                        <input type="text" class="form-control m-input"
+                                                                               placeholder="Search Student">
+                                                                        <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                                            <span>
+                                                                                <i class="la la-search"></i>
+                                                                            </span>
+												                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-section__content">
+                                                                <table class="table">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            #
+                                                                        </th>
+                                                                        <th>
+                                                                            First Name
+                                                                        </th>
+                                                                        <th>
+                                                                            Last Name
+                                                                        </th>
+                                                                        <th>
+                                                                            Select
+                                                                        </th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            1
+                                                                        </th>
+                                                                        <td>
+                                                                            Jhon
+                                                                        </td>
+                                                                        <td>
+                                                                            Stone
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <label class="m-checkbox m-checkbox--success">
+                                                                                <input type="checkbox">
+                                                                                <span></span>
+                                                                            </label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            1
+                                                                        </th>
+                                                                        <td>
+                                                                            Jhon
+                                                                        </td>
+                                                                        <td>
+                                                                            Stone
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <label class="m-checkbox m-checkbox--success">
+                                                                                <input type="checkbox">
+                                                                                <span></span>
+                                                                            </label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Section-->
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button data-dismiss="modal"
+                                                            class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+                                                        Close
+                                                    </button>
+                                                    <button type="button"
+                                                            class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                                                        Save Changes
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
